@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="bridgeware">
+        <property name="context-root" value="bridgeware"/>
+        <property name="java-output-path" value="/bridgeware/target/classes"/>
+    </wb-module>
+</project-modules>
