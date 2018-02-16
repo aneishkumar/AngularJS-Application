@@ -1,0 +1,6 @@
+{{error.message}}
+<form>
+Enter username:<input type="text" ng-model="user.username">
+Enter password:<input type="type" ng-model="user.password">
+<input type="submit" value="login" ng-onclick="userlogin(user)">
+</form>

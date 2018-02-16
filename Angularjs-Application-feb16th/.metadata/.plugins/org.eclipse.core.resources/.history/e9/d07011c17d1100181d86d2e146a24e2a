@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body ng-app="myapp" >
+<div ng-controller="UserController">
+<form>
+<form>
+<pre>
+First name:<input type="text" ng-model="user.firstname">
+Last name:<input type="text" ng-model="user.lastname">
+Username :<input type="text" ng-model="user.username">
+Password :<input type="password" ng-model="user.password">
+
+<input type="submit" ng-click="adduser(user)">
+</pre>
+</form>
+<br>
+<table>
+<tr ng-repeat="u in users">
+<tr>
+<td>{{u.firstname}}</td>
+<td>{{u.lastname}}</td>
+<td>{{u.username}}</td>
+<td>{{u.password}}</td>
+</tr>
+</table>
+
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="Controller/Usercontroller.js"></script>
+<script type="text/javascript" src="services/userservice.js"></script>
+</html>

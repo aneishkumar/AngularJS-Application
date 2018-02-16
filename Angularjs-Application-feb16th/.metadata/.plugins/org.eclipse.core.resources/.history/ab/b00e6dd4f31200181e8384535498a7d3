@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+
+var app=angular.module("myapp",['ngRoute'])
+app.config(function($routeProvider){
+	$routeProvider
+	.when('/register',{
+		templateUrl:'registrationcheck.html',
+		controller:'UserController'
+	})
+	.when('/aboutus',{
+		templateUrl:'seeusers.html',
+		controller:'UserController'
+	})
+	
+	})
+	.otherwise({redirectTo: '/'});
+})

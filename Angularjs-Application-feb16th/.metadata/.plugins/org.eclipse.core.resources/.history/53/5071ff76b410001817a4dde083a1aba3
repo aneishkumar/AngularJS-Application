@@ -1,0 +1,52 @@
+package com.project2.controller;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project2.DAO.UserDAO;
+import com.project2.model.User;
+@RestController
+public class UserController {
+	@Autowired
+	private UserDAO userdao;
+	@RequestMapping(value="/adduser",method=RequestMethod.POST)
+	public void addUser(@RequestBody User user)
+	{
+		userdao.addUser(user);
+		
+		
+	}
+	@RequestMapping(value="/seeusers",method=RequestMethod.GET)
+	public List<User> seealluser()
+	{
+		
+		List<User> alluser=(List<User>)this.userdao.gettalluser();
+		return alluser;
+		
+	}
+	@RequestMapping(value="/deleteuser/{user}",method=RequestMethod.GET)
+	public List<User> deleteuser(@PathVariable("user") String username)
+	{
+		
+		userdao.deleteuser(username);
+		List<User> alluser=(List<User>)this.userdao.gettalluser();
+		return alluser;
+	}
+	@RequestMapping(value="/edituser/{user}",method=RequestMethod.PUT)
+	public List<User> edituser(@PathVariable("user")String username,  User user)
+	{
+		userdao.edituser(String username);
+		List<User> alluser=(List<User>)this.userdao.gettalluser();
+		return alluser;
+		
+		
+	}
+
+}

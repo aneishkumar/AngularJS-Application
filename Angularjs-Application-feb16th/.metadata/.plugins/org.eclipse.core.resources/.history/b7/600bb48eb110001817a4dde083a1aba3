@@ -1,0 +1,14 @@
+package com.project2.DAO;
+
+
+
+import java.util.List;
+
+import com.project2.model.User;
+
+public interface UserDAO{
+
+	void addUser(User user);
+	public List<User> gettalluser();
+    public boolean deleteuser(String username);
+}
