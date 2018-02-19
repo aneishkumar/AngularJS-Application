@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+app.controller('UserController',function($scope,$location,$rootscope,UserService){
+	UserService.gettallusers().then(function(response){
+		alert("success")
+		$scope.users=response.data;
+	
+	},
+	function(response){
+		alert("unsuccessfull")
+		
+	})
+	$scope.adduser=function(user)
+	{
+		
+		UserService.adduser(user).then(function(response){
+			alert("success")
+		$scope.user={}
+			
+		},function(response){
+			alert("unsuccessfull")
+			
+		})	
+	
+	}
+	$scope.loginuser=function(user)
+	{
+		
+		UserService.loginuser(user).then(function(response){
+			$scope.user={}
+			$rootscope.userlogged=response.data;
+			$location.path('/home')
+		
+			
+		},function(response){
+			alert("unsuccessfull")
+			$location.path="/login"
+			
+		})	
+	
+	}
+})

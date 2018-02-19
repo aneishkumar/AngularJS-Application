@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+app.controller('UserController',function($scope,UserService){
+	UserService.gettallusers().then(function(response){
+		alert("success")
+		$scope.users=response.data;
+	
+	},
+	function(response){
+		alert("unsuccessfull")
+		
+	})
+	$scope.adduser=function(user)
+	{
+		
+		UserService.adduser(user).then(function(response){
+			alert("success")
+		},function(response){
+			alert("unsuccessfull")
+			
+		})
+		
+		
+		
+	}
+})
