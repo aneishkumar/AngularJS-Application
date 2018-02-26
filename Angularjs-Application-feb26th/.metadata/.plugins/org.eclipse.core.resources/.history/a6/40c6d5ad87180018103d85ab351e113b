@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+app.controller('UpdateUserController',function($scope,$location,$rootScope,$cookieStore,UserService){
+	UserService.getcurrentuserdata().then(function(response){
+		alert("success")
+		$scope.userupdate=response.data;
+	
+	})
+
