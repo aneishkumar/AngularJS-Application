@@ -1,0 +1,15 @@
+package com.project2.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Blog
+{
+	private String blogid;
+	private String blogcontent;
+	private String blogtitle;
+	private String username;
+	
+	
+
+}

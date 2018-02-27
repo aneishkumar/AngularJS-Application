@@ -1,0 +1,9 @@
+<table>
+<tr ng-repeat="u in blogdata">
+<h1>{{u.blogtiltle}}</h1>
+<br>
+<td>{{u.blogcontent}}</td>
+<td>{{u.username}}</td>
+<br>
+</tr>
+</table>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body ng-app="myapp">
+<b>
+<a href="#/addblog" ng-show="userlogged.username!=undefined">Blog</a>&nbsp;&nbsp;<a href="#/register" ng-show="userlogged.username!=undefined">Register</a>&nbsp;&nbsp;<a href="#/seealluser">SeeAllRegistered Users</a>&nbsp;&nbsp;<a href="#/login">Login</a>
+&nbsp;&nbsp;<a href="#/home">Home</a>&nbsp;&nbsp;<a href="" ng-show="userlogged.username!=undefined" ng-click="logout()">Log out</a><a href="#/updateprofile" ng-show="userlogged.username!=undefined">Edit Profile</a>
+&nbsp;&nbsp;<a href="#/">Back</a></b>
+<div ng-view> </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="Controller/Usercontroller.js"></script>
+<script type="text/javascript" src="Controller/BlogController.js"></script>
+<script type="text/javascript" src="services/userservice.js"></script>
+<script type="text/javascript" src="services/BlogService.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+
+</html>

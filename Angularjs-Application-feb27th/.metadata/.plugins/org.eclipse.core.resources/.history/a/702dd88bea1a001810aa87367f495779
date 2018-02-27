@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+app.controller('BlogController',function($scope,$rootscope,BlogService)
+		{
+	$scope.addblog=function(blog)
+	{
+		
+	}
+	
+	
+})

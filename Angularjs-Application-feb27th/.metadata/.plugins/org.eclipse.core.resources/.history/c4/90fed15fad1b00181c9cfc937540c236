@@ -1,0 +1,8 @@
+<table>
+<tr ng-repeat="u in blogdata">
+<td>{{u.firstname}}</td>
+<td>{{u.lastname}}</td>
+<td>{{u.username}}</td>
+<td>{{u.password}}</td>
+</tr>
+</table>
