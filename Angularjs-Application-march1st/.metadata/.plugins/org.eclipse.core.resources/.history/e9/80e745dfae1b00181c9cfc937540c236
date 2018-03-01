@@ -1,0 +1,11 @@
+<table>
+<div ng-repeat="u in blogdata">
+<h1><center><font size="12"><b>{{u.blogtiltle}}</font></b></center></h1>
+<tr >
+<td>{{u.blogid}}</td>
+<td>{{u.blogcontent}}</td>
+<td>{{u.username}}</td>
+<br>
+</tr>
+</table>
+</div>

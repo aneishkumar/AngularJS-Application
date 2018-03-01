@@ -1,0 +1,11 @@
+<form>
+<pre>
+First name:<input type="text" ng-model="user.firstname">
+Last name:<input type="text" ng-model="user.lastname">
+Username :<input type="text" ng-model="user.username" disabled="disabled">
+Password :<input type="password" ng-model="user.password">
+
+<input type="submit" ng-click="Edit(user)"><a href="#/home">Go back</a>
+</pre>
+</form>
+<br>

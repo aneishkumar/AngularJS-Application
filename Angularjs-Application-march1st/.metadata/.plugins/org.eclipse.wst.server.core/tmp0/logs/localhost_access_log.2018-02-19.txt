@@ -1,0 +1,10 @@
+127.0.0.1 - - [19/Feb/2018:14:21:12 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:21:16 +0530] "GET /bridgeware/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:23:31 +0530] "GET /project2/index.html HTTP/1.1" 200 943
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:23:32 +0530] "GET /project2/app.js HTTP/1.1" 200 754
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:23:32 +0530] "GET /project2/Controller/Usercontroller.js HTTP/1.1" 200 1047
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:23:32 +0530] "GET /project2/services/userservice.js HTTP/1.1" 200 562
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:23:38 +0530] "GET /project2/seeusers.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:23:39 +0530] "GET /bridgeware/seeusers HTTP/1.1" 500 20921
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:23:48 +0530] "GET /project2/home.html HTTP/1.1" 200 31
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:14:23:49 +0530] "GET /bridgeware/seeusers HTTP/1.1" 500 20921
