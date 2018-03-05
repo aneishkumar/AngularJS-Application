@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+app.controller('BlogController',function($scope,BlogService)
+		{
+	$scope.addblog=function(blog)
+	
+	{
+		alert("inside add blog")
+	BlogService.addblog(blog).then(function(response){
+		alert("Sucess")
+		
+	},function(response)
+	{
+	
+		alert("failure")
+		
+	})
+		}
+	
+	
+})

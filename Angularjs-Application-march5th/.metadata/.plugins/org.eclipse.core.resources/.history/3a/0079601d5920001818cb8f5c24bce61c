@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+app.controller('BlogController',function($scope,$sce,BlogService)
+	{	
+	BlogService.getallblog().then(function(response){
+		$scope.blogdata=response.data;
+		$scope.blogdata1 = $sce.trustAsHtml(someHtmlVar);
+	},function(response)
+	{
+		alert("Unsucessfull")
+	})
+	$scope.addblog=function(blog)
+	
+	{
+		alert("inside add blog")
+	BlogService.addblog(blog).then(function(response){
+		alert("Sucess")
+		
+	},function(response)
+	{
+	
+		alert("failure")
+		
+	})
+		}
+	
+	
+})

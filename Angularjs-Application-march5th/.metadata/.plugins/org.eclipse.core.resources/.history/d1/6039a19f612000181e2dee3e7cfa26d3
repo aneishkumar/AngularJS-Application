@@ -1,0 +1,8 @@
+
+<div ng-repeat="u in blogdata" ng-model='blogdata'>
+      <div ng-model="blogdata"><h1><center><font size="12"><b>Blog Tiltle:{{u.blogtitle}}</font></center></b></h1></div>
+     Blog id:{{u.blogid}}<br> 
+     Blog Content:{{u.blogcontent}}<br> 
+     Blog UserName:{{u.username}} <br>
+    </div>
+  </div>
