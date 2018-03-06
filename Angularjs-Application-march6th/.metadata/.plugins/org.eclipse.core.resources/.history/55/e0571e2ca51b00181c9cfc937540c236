@@ -1,0 +1,15 @@
+
+
+<form>
+<pre>
+First name:<input type="text" required="true"  ng-model="user.firstname">
+Last name:<input type="text" required="true"  ng-model="user.lastname">
+Username :<input type="text" required="true"  ng-model="user.username">
+Password :<input type="password" required="true"  ng-model="user.password">
+
+<input type="submit" ng-click="adduser(user)">
+</pre>
+</form>
+<br>
+
+
