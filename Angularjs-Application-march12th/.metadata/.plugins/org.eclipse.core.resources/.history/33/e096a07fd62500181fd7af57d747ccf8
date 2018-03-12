@@ -1,0 +1,19 @@
+<div class="panel panel-info">
+<div class="panel-heading">
+
+      
+     {{blogq.blogtitle}}<br>
+    <b> Posted By:{{blogq.username}}  </b>   
+     </div>
+      <div class="panel-content">
+      <p ng-bind-html="blogcontent"> </p>
+      {{blogq.blogcontent}}</div>
+      </div>
+      <textarea row="2" cols="4" ng-model="blogmessage"></textarea>
+      <button type="button" class="btn btn-primary" ng-click="addcomment(blog,blogmessage)"></button>
+      <br><br><br>
+      {{blogmessage.error}}
+      {{blogmessage.comment}}
+      {{blogmessage.postedby}}
+   
+   

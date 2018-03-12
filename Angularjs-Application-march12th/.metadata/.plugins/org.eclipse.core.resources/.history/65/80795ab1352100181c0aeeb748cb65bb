@@ -1,0 +1,14 @@
+
+  <div class="panel panel-info" ng-repeat="u in blogdata" ng-model='blogdata'>
+  <a href="#/display/{{u.blogid}}">
+<div class="panel-heading">
+ 
+     {{u.blogtitle}}<br>
+    <b> Posted By:{{u.username}}  </b>   
+     </div>
+      <div class="panel-content" >
+      <p ng-bind-html="blogcontent">
+      {{u.blogcontent}}</p></div>
+      
+      </a>
+      </div>

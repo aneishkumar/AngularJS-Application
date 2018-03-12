@@ -1,0 +1,9 @@
+
+
+      
+     <h1><center><font size="12" ><h1>{{blogq.blogtitle}}</font></center></b></h1></div>
+      <p><center>Posted By:{{blogq.username}}</center></p>
+   
+   
+
+<
