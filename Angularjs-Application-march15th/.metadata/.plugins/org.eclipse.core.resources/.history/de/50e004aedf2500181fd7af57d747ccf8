@@ -1,0 +1,12 @@
+package com.project2.DAOImpl;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.ProfilePictureDAO;
+@Repository
+@Transactional
+public class ProfilePictureDAOImpl implements ProfilePictureDAO  {
+
+}

@@ -1,0 +1,8 @@
+package com.project2.model;
+
+public class BlogComment {
+	private int id;
+	private Blog blog;
+	
+
+}

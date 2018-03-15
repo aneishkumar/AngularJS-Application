@@ -1,0 +1,23 @@
+package com.project2.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class BlogLikes {
+    @Id
+	int blogid;
+	public int getBlogid() {
+		return blogid;
+	}
+	public void setBlogid(int blogid) {
+		this.blogid = blogid;
+	}
+	public int getLikes() {
+		return likes;
+	}
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
+	int likes;
+}
