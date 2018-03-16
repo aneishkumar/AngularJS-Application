@@ -1,0 +1,14 @@
+<div class="panel panel-info">
+<div class="panel-heading">
+
+      
+     {{blogq.blogtitle}}<br>
+    <b> Posted By:{{blogq.username}}  </b>   
+     </div>
+      <div class="panel-content">
+      <p ng-bind-html="blogcontent"> </p>
+      {{blogq.blogcontent}}</div><br>
+      <br>
+      
+      
+      </div>

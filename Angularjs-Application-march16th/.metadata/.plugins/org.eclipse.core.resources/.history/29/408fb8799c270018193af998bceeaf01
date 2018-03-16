@@ -1,0 +1,47 @@
+package com.project2.DAOImpl;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.BlogCommentDao;
+import com.project2.model.Blog;
+import com.project2.model.BlogComment;
+import com.project2.model.User;
+@Repository
+@Transactional
+public class BlogCommentDAOImpl implements BlogCommentDao {
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public void addBlogComment(int blogid, String message,BlogComment blogcomment)
+	{
+		
+	}
+	public void addBlogComment(BlogComment blog) 
+	{
+		Session session=sessionFactory.getCurrentSession();
+		session.save(blog);
+		
+	}
+	
+	
+	
+	public List<BlogComment> getallblog() {
+		Session session=sessionFactory.getCurrentSession();
+		List<BlogComment> bloglist=session.createQuery("from Blog").list();
+		return bloglist;
+	}
+	public Blog getblog(int blogid) {
+		
+		Session session=sessionFactory.getCurrentSession();
+		Blog blog=(Blog)session.get(Blog.class, blogid);
+		return blog;
+	}
+	
+}
