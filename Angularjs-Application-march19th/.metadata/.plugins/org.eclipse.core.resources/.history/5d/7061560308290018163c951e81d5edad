@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+app.controller('BlogController',function($scope,$sce,$location,$routeParams,BlogService)
+		{
+	
+		}

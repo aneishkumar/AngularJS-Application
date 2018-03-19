@@ -1,0 +1,8 @@
+package com.project2.DAO;
+
+import com.project2.model.Blog;
+import com.project2.model.BlogComment;
+
+public interface BlogCommentDao {
+	public void addBlogComment(int blogid,String message,BlogComment blogcomment);
+}

@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Mar 19 17:43:45 IST 2018
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\aneis\\.m2\\repository\\org\\springframework\\spring-web\\4.2.5.RELEASE\\spring-web-4.2.5.RELEASE.jar=WEB-INF/lib/spring-web-4.2.5.RELEASE.jar
+org.eclipse.jst.j2ee.server\:backend=WEB-INF/lib/backend-0.0.1-SNAPSHOT.jar
