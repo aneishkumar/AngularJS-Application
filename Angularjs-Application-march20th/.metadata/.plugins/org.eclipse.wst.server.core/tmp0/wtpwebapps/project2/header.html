@@ -1,0 +1,4 @@
+
+<a href="#/blogapproval" ng-if="userlogged.role=='ADMIN'">Pending for approval<a href="#/allblog" ng-show="userlogged.username!=undefined">->All Blog</a>&nbsp;&nbsp;<a href="#/addblog" ng-show="userlogged.username!=undefined"> Add Blog</a>&nbsp;&nbsp;<a href="#/register" ng-show="userlogged.username==undefined">Register</a>&nbsp;&nbsp;<a href="#/seealluser" ng-show="userlogged.role=='ADMIN'">SeeAllRegistered Users</a>&nbsp;&nbsp;<a href="#/login" ng-show="userlogged.username==undefined">Login</a>
+&nbsp;&nbsp;<a href="#/home">Home</a>&nbsp;&nbsp;<a href="" ng-show="userlogged.username!=undefined" ng-click="logout()">Log out</a><a href="#/updateprofile" ng-show="userlogged.username!=undefined">Edit Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#/profilepic" ng-show="userlogged.username!=undefined"> Profile Pic</a>
+&nbsp;&nbsp;<a href="#/">Back</a></b>

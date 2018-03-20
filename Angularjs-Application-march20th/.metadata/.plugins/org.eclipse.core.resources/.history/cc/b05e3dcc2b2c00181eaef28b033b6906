@@ -1,0 +1,11 @@
+package com.project2.DAO;
+
+import com.project2.model.Notification;
+
+public interface NotificationDAO {
+	
+
+	void addnotification(Notification notification);
+	
+
+}

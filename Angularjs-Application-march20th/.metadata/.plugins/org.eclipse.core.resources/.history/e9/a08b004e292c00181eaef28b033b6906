@@ -1,0 +1,13 @@
+package com.project2.DAOImpl;
+
+import com.project2.DAO.NotificationDAO;
+import com.project2.model.Notification;
+
+public class NotificationDAOImpl implements NotificationDAO {
+
+	public void addnotification(Notification notification) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

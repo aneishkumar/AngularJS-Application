@@ -1,0 +1,88 @@
+/**
+ * 
+ */
+app.controller('BlogController',function($scope,$sce,$location,$routeParams,BlogService)
+	{	
+	var id=$routeParams.id
+	BlogService.getallblog().then(function(response){
+		
+		$scope.blogdata = response.data;
+		$scope.blogdata1=$sce.trustAsHtml(response.data);
+	},function(response)
+	{
+		alert("Unsucessfull")
+	})
+	$scope.addblogmessage=function(blogq,blogmessage)
+	
+	{
+		
+	
+		$scope.blogmessage="";
+		$scope.bogcomment.blogpost=post;
+		$scope.bogcomment.comment=blogmessage;
+		BlogService.addblogmessage($scope.blogcomment).then(function(response){
+		
+	},function(response)
+	{
+	
+		alert("failure")
+		
+	})
+		}
+	$scope.addblog=function(blog)
+	
+	{
+		
+	BlogService.addblog(blog).then(function(response){
+		$location.path('/home')
+	},function(response)
+	{
+	
+		alert("failure")
+		
+	})
+		}
+$scope.addcomment=function(blog,blogmessage)
+	
+	{
+	
+		
+	BlogService.addblogmessage(blogid,blogmessage).then(function(response){
+		
+	},function(response)
+	{
+	
+		alert("failure")
+		
+	})
+		}
+	if(id!=undefined)
+			{
+		
+			
+	
+	BlogService.displayblog(id).then(function(response)
+	{
+		$scope.blogq = response.data;
+		
+	},function(response)
+	{
+		alert("Unsucessfull")
+		
+	})
+	BlogService.displayblogmessage(id).then(function(response)
+	{
+		$scope.blogmessage = response.data;
+		
+	},function(response)
+	{
+		alert("Unsucessfull")
+		
+	})
+	
+	
+		
+			}
+	
+	
+})

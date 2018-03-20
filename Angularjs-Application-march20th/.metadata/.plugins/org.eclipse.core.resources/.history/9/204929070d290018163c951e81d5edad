@@ -1,0 +1,8 @@
+<div class="panel-heading" ng-repeat="u in adminblogdata" ng-model='adminblogdata'>
+Title of the blog:{{u.blogtitle}}<br>
+
+
+</div>
+
+<a ng-click="approve(u)"><button>Approve</button></a>
+<a ng-click="reject(u)"><button>Reject</button></a>

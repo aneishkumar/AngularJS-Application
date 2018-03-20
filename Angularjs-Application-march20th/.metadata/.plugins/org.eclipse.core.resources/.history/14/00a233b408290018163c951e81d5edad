@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+app.controller('AdminBlogController',function($scope,$sce,$location,$routeParams,BlogService)
+		{
+	var blogid=$routeParams.blogid
+	$scope
+	
+		})

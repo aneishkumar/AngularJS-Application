@@ -1,0 +1,92 @@
+<div class="container" style="margin-top:40px" ">
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong> REGISTER</strong>
+					</div>
+					<br/>
+					<div align="center">
+					
+					</div>
+					<div class="panel-body">
+						<form>
+							
+							<fieldset>
+								<div class="row">
+									<div class="center-block">
+										
+									</div>
+								</div>
+								<div class="row">
+									
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span> 
+												<form:input  placeholder="Username"  ng-model="user.username" required="true" type="text" pattern=".{5,10}" title="minimum length for username is 5"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span> 
+												<form:input  placeholder="Name" ng-model="user.name"> required="true" type="text" />
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">
+												
+													<i class="glyphicon glyphicon-user" ></i>
+												</span> 
+												<form:input  placeholder="Email Id" ng-model="user.emailid" required="true" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Eg:user@xxx.yyy>"/>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">
+												
+													<i class="glyphicon glyphicon-user" ></i>
+												</span> 
+												<form:select>   ng-model="user.role">
+												<option value="Student">Student</option>
+												<option value="Alumini">Alumini</option>
+												</form:select>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">
+												
+													<i class="glyphicon glyphicon-user" ></i>
+												</span> 
+												<form:input  class="form-control" placeholder="Mobile Number" ng-model="user.mobilenumber" required="true" type="text" pattern="[789][0-9]{9}" title="Should be 10 digits starting from 7,8 or 9"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">
+												
+													<i class="glyphicon glyphicon-lock" ></i>
+												</span> 
+												<form:input  class="form-control" placeholder="Password" ng-model="user.password" required="true" type="password" />
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<input style="background-color:purple" type="submit" class="btn btn-lg btn-primary btn-block"  ng-click="adduser(user)" value="Register">
+										</div>
+									</div>
+								</div>
+							</form>
+							
+					</div>
+					</div>
+					
+					
+                </div>
+			</div>
