@@ -1,0 +1,57 @@
+package com.project2.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Component
+@Table(name="blogcomment")
+public class BlogComment
+{
+	@Id
+	private int commentid;
+    private String comment;
+	
+	private String username1;
+	
+	private int blogid1;
+	
+	public int getCommentid() {
+		return commentid;
+	}
+	public void setCommentid(int commentid) {
+		this.commentid = commentid;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	public String getUsername1() {
+		return username1;
+	}
+	public void setUsername1(String username1) {
+		this.username1 = username1;
+	}
+	public int getBlogid1() {
+		return blogid1;
+	}
+	public void setBlogid1(int blogid1) {
+		this.blogid1 = blogid1;
+	}
+	
+	public BlogComment() {
+		System.out.println("===========================This is blogcomment class=============================");
+	}
+	
+	
+	
+	
+}

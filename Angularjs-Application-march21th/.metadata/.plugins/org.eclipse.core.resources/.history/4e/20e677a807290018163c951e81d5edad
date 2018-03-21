@@ -1,0 +1,6 @@
+<div ng-repeat="u in adminblogdata" ng-model='adminblogdata'>
+Title of the blog:{{u.blogtitle}}<br>
+Blog Content:{{u.blogcontent}}<br>
+<a href="approve/{{u.blogid}}"
+
+</div>

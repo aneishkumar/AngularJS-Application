@@ -1,0 +1,35 @@
+package com.project2.DAOImpl;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.NotificatioNumberDAO;
+import com.project2.model.Blog;
+import com.project2.model.NotificationNumber;
+@Repository
+@Transactional
+
+public class NotificationNumberDAOImpl implements NotificatioNumberDAO {
+	@Autowired
+	private SessionFactory sessionFactory;
+	public void updatenotificationnumber(NotificationNumber notificationnumber) {
+		Session session=sessionFactory.getCurentSession();
+		session.saveOrUpdate(notificationnumber);
+		
+	}
+
+	public NotificationNumber getnotificationnumber(String Username) {
+		Session session=sessionFactory.getCurrentSession();
+		Blog blog=(Blog)session.get(Blog.class, blogid);
+	}
+
+	public NotificationNumber setnotificationnumber(String Username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

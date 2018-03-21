@@ -1,0 +1,13 @@
+package com.project2.DAO;
+
+import com.project2.DAO.FriendDAO;
+import com.project2.model.Friends;
+
+public class FriendDAOImpl implements FriendDAO {
+
+	public void addFriend(Friends friends) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

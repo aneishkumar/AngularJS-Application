@@ -1,0 +1,67 @@
+package com.project2.DAOImpl;
+
+import java.util.List;
+
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.UserDAO;
+import com.project2.model.User;
+@Repository
+@Transactional
+public class UserDAOImpl implements UserDAO {
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	public void addUser(User user) {
+		Session session=sessionFactory.getCurrentSession();
+		session.save(user);
+		
+	}
+
+	public List<User> gettalluser()
+	{
+		Session session=sessionFactory.getCurrentSession();
+		List<User> userlist=session.createQuery("from User").list();
+		return userlist;
+		
+	}
+
+	public void deleteuser(String username) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		User user=(User)session.get(User.class, username);
+		session.delete(user);
+		
+	}
+	public User getuser(String username)
+	{
+		Session session=sessionFactory.getCurrentSession();
+		User user1=(User)session.get(User.class, username);
+		return user1;
+	}
+
+	public void edituser(User user) 
+	{
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		
+		session.update(user);
+	}
+
+	public List<User> gettallsuggesteduser(String username) {
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from User where username!=:username ");
+		query.setParameter("username",username);
+		List<User> userlist=query.list();
+		return userlist;
+	}
+	
+
+}

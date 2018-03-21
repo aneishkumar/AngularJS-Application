@@ -1,0 +1,16 @@
+package com.project2.DAO;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.project2.model.Notification;
+@Repository
+@Transactional
+public interface NotificationDAO {
+	
+
+	void addnotification(Notification notification);
+	
+
+}

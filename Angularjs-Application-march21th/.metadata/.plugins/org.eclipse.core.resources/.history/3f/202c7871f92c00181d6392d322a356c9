@@ -1,0 +1,43 @@
+package com.project2.DAOImpl;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.NotificatioNumberDAO;
+import com.project2.model.Notification;
+import com.project2.model.NotificationNumber;
+@Repository
+@Transactional
+
+public class NotificationNumberDAOImpl implements NotificatioNumberDAO {
+	@Autowired
+	private SessionFactory sessionFactory;
+	public void updatenotificationnumber(NotificationNumber notificationnumber) {
+		Session session=sessionFactory.getCurrentSession();
+		session.saveOrUpdate(notificationnumber);
+		
+	}
+
+	public NotificationNumber getnotificationnumber(String Username) {
+		Session session=sessionFactory.getCurrentSession();
+		NotificationNumber notificationnumber =(NotificationNumber)session.get(NotificationNumber.class, Username);
+		return notificationnumber;
+	}
+
+	public void setnotificationnumber(String username) {
+	
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from Notification where username=:username and viewed='0");
+		query.setParameter("username",username);
+		List<Notification> list=query.list();
+		
+	}
+
+}
