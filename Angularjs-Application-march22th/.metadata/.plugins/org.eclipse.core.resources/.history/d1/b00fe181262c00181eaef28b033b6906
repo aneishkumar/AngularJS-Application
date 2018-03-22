@@ -1,0 +1,9 @@
+package com.project2.model;
+
+public class Friends 
+{
+	private String fromid;
+	
+	
+
+}

@@ -1,0 +1,14 @@
+<table>
+<tr>
+<td>Username</td>
+<td>Username</td>
+
+<td>User name</td>
+<td>Password</td>
+<tr ng-repeat="u in users">
+<td>{{u.name}}</td>
+<td>{{u.emailid}}</td>
+<td>{{u.username}}</td>
+<td>{{u.password}}</td>
+</tr>
+</table>

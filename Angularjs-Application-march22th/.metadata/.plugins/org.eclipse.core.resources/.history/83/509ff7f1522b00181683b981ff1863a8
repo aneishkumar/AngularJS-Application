@@ -1,0 +1,7 @@
+<div class="panel-heading" ng-repeat="u in adminblogdata" ng-model='adminblogdata'>
+Title of the blog:{{u.blogtitle}}<br>
+<a href="#/adminreadblog/{{u.blogid}}">Read Blog</a>
+
+
+</div>
+

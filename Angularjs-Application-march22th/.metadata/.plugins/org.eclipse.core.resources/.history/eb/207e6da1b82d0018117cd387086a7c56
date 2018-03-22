@@ -1,0 +1,31 @@
+package com.project2.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+
+import com.project2.DAO.NotificationDAO;
+
+import com.project2.DAOImpl.NotificationNumberDAOImpl;
+import com.project2.model.NotificationNumber;
+import com.project2.model.User;
+
+@Controller
+public class NotificationController {
+	@Autowired
+	private NotificationDAO notificationdao;
+	@Autowired
+	private NotificationNumberDAOImpl notificationnumberdao;
+	
+	public List<NotificationNumber> getnotificationnumber(HttpSession session)
+	{
+		String username=(String)session.getAttribute("userlogged");
+		List<NotificationNumber> alluser=(List<NotificationNumber>)
+		
+	}
+
+}

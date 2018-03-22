@@ -1,0 +1,21 @@
+package com.project2.DAOImpl;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.project2.DAO.NotificationDAO;
+import com.project2.model.Notification;
+
+public class NotificationDAOImpl implements NotificationDAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	public void addnotification(Notification notification) {
+		Session session=sessionFactory.getCurrentSession();
+		session.save(friend);	
+		
+	}
+
+}
