@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<style>
+
+.blog{
+    
+    background:TEAL;
+}
+a.fa-globe {
+  position: relative;
+  font-size: 2em;
+  color: grey;
+  cursor: pointer;
+}
+a.fa-users {
+  position: relative;
+  font-size: 2em;
+  color: grey;
+  cursor: pointer;
+}
+span.fa-comment {
+  position: absolute;
+  font-size: 0.6em;
+  top: -4px;
+  color: red;
+  right: -4px;
+}
+span.num {
+  position: absolute;
+  font-size: 0.3em;
+  top: 1px;
+  color: #fff;
+  right: 2px;
+}</style>
+<body  ng-app="myapp">
+<b>
+
+<a href="#/blogapproval" ng-if="userlogged.role=='ADMIN'">Pending for approval</a><a href="#/allblog" ng-show="userlogged.username!=undefined">->All Blog</a>&nbsp;&nbsp;<a href="#/addblog" ng-show="userlogged.username!=undefined"> Add Blog</a>&nbsp;&nbsp;<a href="#/register" ng-show="userlogged.username==undefined">Register</a>&nbsp;&nbsp;<a href="#/seealluser" ng-show="userlogged.role=='ADMIN'">SeeAllRegistered Users</a>&nbsp;&nbsp;<a href="#/login" ng-show="userlogged.username==undefined">Login</a>
+&nbsp;&nbsp;<a href="#/home">Home</a>&nbsp;&nbsp;<a href="" ng-show="userlogged.username!=undefined" ng-click="logout()">Log out</a><a href="#/updateprofile" ng-show="userlogged.username!=undefined">Edit Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#/profilepic" ng-show="userlogged.username!=undefined"> Profile Pic</a>
+&nbsp;&nbsp;<a href="#/">Back</a></b>
+
+
+
+<ul><li><div ng-if="userlogged.username!=undefined" class="dropdown">
+<a href="" ng-click="clicknotification()" data-toggle="dropdown"  class="fa fa-globe">
+  <span class="fa fa-comment"></span>
+  <span class="num" >{{notinumber.num}}</span>
+</a>
+ <ul class="dropdown-menu">
+            <li class="box" ng-repeat="n in notification"><a href="#"><b>{{n.notification}}</b></a> 
+            </li>
+            <center><li><a href="" ng-click="clearallnotification()">Clear All</a></li></center>
+            
+        </ul>
+    </div></li>
+   <li> <div ng-if="userlogged.username!=undefined" class="dropdown">
+<a href=""  data-toggle="dropdown"  class=" fa fa-users">
+  <span class="fa fa-comment"></span>
+  <span class="num" >{{notinumber.num}}</span>
+</a>
+ <ul class="dropdown-menu">
+            <li class="box" ng-repeat="n in notification"><a href="#"><b>{{n.notification}}</b></a> 
+            </li>
+            <center><li><a href="" ng-click="clearallnotification()">Clear All</a></li></center>
+            
+        </ul>
+    </div>
+    </li>
+    </ul>
+    
+ 
+  
+
+
+
+<div ng-view> </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="Controller/Usercontroller.js"></script>
+<script type="text/javascript" src="Controller/BlogController.js"></script>
+
+<script type="text/javascript" src="services/userservice.js"></script>
+<script type="text/javascript" src="services/BlogService.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+
+
+</html>

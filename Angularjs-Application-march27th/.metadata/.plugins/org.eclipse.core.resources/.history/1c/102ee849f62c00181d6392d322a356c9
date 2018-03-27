@@ -1,0 +1,24 @@
+package com.project2.DAOImpl;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.NotificatioNumberDAO;
+import com.project2.model.NotificationNumber;
+@Repository
+@Transactional
+
+public class NotificationNumberDAOImpl implements NotificatioNumberDAO {
+
+	public void updatenotificationnumber(NotificationNumber notificationnumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public NotificationNumber getnotificationnumber(String Username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

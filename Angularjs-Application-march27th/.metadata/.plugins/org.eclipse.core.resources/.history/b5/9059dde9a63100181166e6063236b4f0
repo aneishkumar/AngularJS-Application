@@ -1,0 +1,23 @@
+package com.project2.DAOImpl;
+
+import com.project2.DAO.FriendRequestNumberDAO;
+import com.project2.model.FriendRequestsNumber;
+
+public class Frnumberdaoimpl implements FriendRequestNumberDAO {
+
+	public void updatefrdrequestnumber(FriendRequestsNumber frdnumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public FriendRequestsNumber getnfrdnumber(String Username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void getfriendrequestnnumber(String username, FriendRequestsNumber frdnumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
