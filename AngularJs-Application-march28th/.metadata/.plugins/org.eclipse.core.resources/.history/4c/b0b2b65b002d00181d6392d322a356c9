@@ -1,0 +1,22 @@
+package com.project2.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+
+import com.project2.DAO.NotificationDAO;
+
+import com.project2.DAOImpl.NotificationNumberDAOImpl;
+
+@Controller
+public class NotificationController {
+	@Autowired
+	private NotificationDAO notificationdao;
+	@Autowired
+	private NotificationNumberDAOImpl notificationnumberdao;
+	public getnotificationnumber()
+	{
+		
+	}
+
+}

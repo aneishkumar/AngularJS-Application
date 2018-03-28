@@ -1,0 +1,12 @@
+<div class="panel panel-info">
+<div class="panel-heading">
+
+      
+     {{blogq.blogtitle}}<br>
+    <b> Posted By:{{blogq.username}}  </b>   
+     </div>
+      <div class="panel-content">
+      {{blogq.blogcontent</div>
+      </div>
+   
+   

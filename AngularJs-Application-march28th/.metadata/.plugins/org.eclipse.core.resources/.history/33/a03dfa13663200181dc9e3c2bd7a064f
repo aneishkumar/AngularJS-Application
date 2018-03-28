@@ -1,0 +1,15 @@
+package com.project2.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.project2.DAO.BlogLikesDAO;
+import com.project2.model.BlogComment;
+
+public class BlogLikesDAOImpl implements BlogLikesDAO{
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+}

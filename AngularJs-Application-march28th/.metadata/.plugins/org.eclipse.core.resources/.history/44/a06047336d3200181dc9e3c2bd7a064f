@@ -1,0 +1,44 @@
+
+<html>
+<head>
+<style>
+a.thumbs-up {
+  position: relative;
+  font-size: 8em;
+  
+  cursor: pointer;
+}</style></head><body><div class="panel panel-info">
+<div class="panel-heading">
+
+      
+     {{blogq.blogtitle}}<br>
+    <b> Posted By:{{blogq.username}}  </b>   
+     </div>
+      <div class="panel-content">
+      <p ng-bind-html="blogcontent"> </p>
+      {{blogq.blogcontent}}</div>
+      </div>
+      <div ng-show="xyz.liked=='true'">
+      
+				<a href="" ng-click="updatelikes(xyz.blogid)">	<span class="glyphicon glyphicon-thumbs-up" style="color: blue"
+						>{{xyz.num2}}</span></a>
+				</div>
+				<div ng-show="xyz.liked=='false'">
+					<span class="glyphicon glyphicon-thumbs-up" style="color: black"
+						ng-click="updatelikes(xyz.blogid)">{{xyz.num2}}</span>
+				</div> 
+      <textarea row="3" cols="15" ng-model="blogmessage"></textarea>
+      <br>
+      
+				
+				<br>
+      <button type="button" class="btn btn-primary" value="comment" ng-click="addcomment(blogq,blogmessage)">Post comment</button>
+      <br><br><br> {{blogmessage.error}}
+      
+      <div class="panel panel-info" ng-repeat="s in blogmessages" ng-model='blogmessages'>     
+      {{s.message}}
+      Posted By=====>{{s.username}} on {{s.postedon | date :'yyyy:MM:dd'}}
+      </div>
+  </body>
+  </html> 
+   

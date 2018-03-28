@@ -1,0 +1,54 @@
+package com.project2.DAOImpl;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.FriendRequestNumberDAO;
+import com.project2.model.FriendRequestsNumber;
+import com.project2.model.Friends;
+import com.project2.model.Notification;
+import com.project2.model.NotificationNumber;
+@Repository
+@Transactional
+public class Frnumberdaoimpl implements FriendRequestNumberDAO {
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	public void updatefrdrequestnumber(FriendRequestsNumber frdnumber) {
+		Session session=sessionFactory.getCurrentSession();
+		session.saveOrUpdate(frdnumber);
+		
+	}
+
+	public FriendRequestsNumber getnfrdnumber(String Username) {
+		Session session=sessionFactory.getCurrentSession();
+		FriendRequestsNumber frdnumber =(FriendRequestsNumber)session.get(FriendRequestsNumber.class, Username);
+		return frdnumber;
+	}
+
+	public void getfriendrequestnnumber(String username, FriendRequestsNumber frdnumber) {
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from Friends where username=:username and accepted='0'");
+		query.setParameter("username",username);
+		List<Friends> list=query.list();
+		
+		int i=0;
+		for(Friends noti:list)
+		{
+			i=i+1;
+		}
+		
+		frdnumber.setNum(i);
+		frdnumber.setUsername(username);
+		session.saveOrUpdate(notificationnumber);
+		
+	}
+
+}
