@@ -1,0 +1,65 @@
+
+<html>
+<head>
+<style>
+.glyphicon.glyphicon-thumbs-up{
+    font-size: 50px;
+}
+a.thumbs-up {
+  position: relative;
+  font-size: 8em;
+  
+  cursor: pointer;
+}</style></head><body>
+
+
+      
+     <h1><center><font size="8"><b>{{blogq.blogtitle}}</b></font></center></h1>
+    <div align="right">
+     <font size="4">
+  <table><tr><td>
+Posted By:</td><td>{{blogq.username}}</td>
+ </tr><tr><td>
+      Posted on:</td><td>{{blogq.postedon}} </td></font>
+     </tr>
+     </table>
+     </font>
+     </div>
+     <br>
+       <center>   <img src="http://localhost:8085/bridgeware/getblogimage/{{blogq.blogid}}"  width="133px" height="133px" class="avatar img-circle" alt="avatar">
+     </center>
+     <br>
+   <br><br>
+     <div align="justify"> 
+     <b>{{blogq.blogcontent}}</b>
+     
+      </div>
+    
+      <div ng-show="xyz.liked =='1'">
+      
+				<a href="" ng-click="updatelikes(xyz.blogid)">	<span class="glyphicon glyphicon-thumbs-up" style="color: blue"
+						>{{xyz.num2}}</span></a>
+				</div>
+				<div ng-show="xyz.liked=='0'">
+				<a href="" ng-click="updatelikes(xyz.blogid)">	<span class="glyphicon glyphicon-thumbs-up" style="color: black"
+						>{{xyz.num2}}</span></a>
+				</div> 
+				<div>
+      <textarea row="3" cols="15" ng-model="blogmessage"></textarea>
+      <br>
+      
+				
+				
+      <button type="button" class="btn btn-primary" value="comment" ng-click="addcomment(blogq,blogmessage)">Post comment</button></div>
+      <br><br><br> {{blogmessage.error}}
+      
+      <div  ng-repeat="s in blogmessages" ng-model='blogmessages'>   
+      <br>
+       <img src="http://localhost:8085/bridgeware/getimage/{{s.username}}"  width="50px" height="50px" class="avatar img-square" alt="avatar">&nbsp;&nbsp; <font size="3">{{s.username}}</font> <font size="1"> {{s.postedon | date :'yyyy:MM:dd'}}</font>  
+     <br> {{s.message}}
+     
+      </div>
+     
+  </body>
+  </html> 
+   

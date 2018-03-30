@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     
+   
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+	rel="stylesheet" />
+
+
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+	  
+	
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	  
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+     
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+.button3 {background-color: #f44336;} /* Red */ 
+}
+
+
+.blog{
+    
+    background:TEAL;
+}
+a.fa-globe {
+  position: relative;
+  font-size: 4em;
+  color: white;
+  cursor: pointer;
+}
+
+a.thumbs-up {
+  position: relative;
+  font-size: 4em;
+  
+  cursor: pointer;
+}
+a.fa-users {
+  position: relative;
+  font-size: 4em;
+  color: white;
+  cursor: pointer;
+}
+span.fa-comment {
+  position: absolute;
+  font-size: 0.6em;
+  top: -4px;
+  color: red;
+  right: -4px;
+}
+span.num {
+  position: absolute;
+  font-size: 0.3em;
+  top: 1px;
+  color: #fff;
+  right: 2px;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}</style>
+<body  ng-app="myapp">
+
+
+
+<nav class="navbar navbar-default" style="font-weight: bold; background-color: #2E114E; " >
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ><font color="white"> JUMBOBEANS </font></a>
+    </div>
+    <ul class="nav navbar-nav">
+       <li><a href="#/home"><font color="white">Home</font></a></li>
+      
+      <li><a href="#/blogapproval" ng-if="userlogged.role=='ADMIN'"><font color="white">Pending for approval</font></a></li>
+      <li> <a href="#/allblog" ><font color="white">All Blog</font></a></li>
+      <li> <a href="#/alljob" ><font color="white">Jobs</font></a></li>
+       <li><a href="#/register" ng-show="userlogged.username==undefined"><font color="white">Register</font></a></li>
+      <li><a href="#/login" ng-show="userlogged.username==undefined"><font color="white">Login</font></a></li>
+      <li> <a href="#/suggesteduser" ng-show="userlogged.username!=undefined"><font color="white">Suggested User</font></a></li>
+      <li> <a href="#/addblog" ng-show="userlogged.username!=undefined"><font color="white"> Add Blog</font></a> </li> 
+      <li><a href="#/addjob" ng-if="userlogged.role=='ADMIN'"><font color="white">Post job</font></a></li>
+       
+      
+      
+     
+     <li><a href="#/chat" ng-show="userlogged.role=='USER'"><font color="white">Chat</font> </a></li>
+     <li><a href="" ng-show="userlogged.username!=undefined" ng-click="logout()"><font color="white">Log out</font></a></li>
+     <li><a href="#/updateprofile" ng-show="userlogged.role=='USER'"><font color="white">Edit Profile</font></a></li>
+     
+    <li><a href="#profilepic" ng-if="userlogged.role=='USER'" >
+                    <img src="http://localhost:8085/bridgeware/getimage/{{userlogged.username}}" alt="upload Picture" width="30px" height="30px" class="img-rounded">
+                    </a></li></ul> <ul class="nav navbar-nav navbar-right">
+     <li><div ng-if="userlogged.role=='USER'" class="dropdown">
+     
+   
+<a href="" ng-click="clicknotification()" data-toggle="dropdown"  class="fa fa-globe">
+  <span class="fa fa-comment"></span>
+  <span class="num" >{{notinumber.num}}</span>
+</a>
+ <ul class="dropdown-menu">
+            <li class="box" ng-repeat="n in notification"><b>{{n.notification}}</b><a href=""  ng-click="deletenoti(n.id)"><button type="button" class="btn btn-danger">Delete</button></a>
+            </li>
+            
+            
+        </ul>
+    </div>
+    </li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    <li>
+    
+    
+    
+    <div ng-if="userlogged.role=='USER'" class="dropdown">
+<a href=""  data-toggle="dropdown"  class=" fa fa-users">
+  <span class="fa fa-comment"></span>
+  <span class="num" >{{frdnumber.num1}}</span>
+</a>
+ <ul class="dropdown-menu">
+            <li class="box" ng-repeat="s in friendrequests"><table><tr><td><b>{{s.fromid}}</b></td><td><a href=""  ng-click="acceptfriend(s.friendid)"><button type="button" class="btn btn-success" >Accept</button></a></td><td>
+             <a href="" ng-click="rejectfriend(s.friendid)"><button type="button" class="btn btn-danger" >Reject</button></a></td></tr> </table>
+            </li>
+            
+            
+        </ul>
+    </div></li>
+            
+     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>        
+        
+        
+        
+      
+     
+      </ul>
+      </nav>
+      
+
+
+
+
+
+
+
+
+
+
+    
+    
+ 
+  
+
+
+
+<div ng-view> </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="Controller/Usercontroller.js"></script>
+<script type="text/javascript" src="Controller/BlogController.js"></script>
+
+<script type="text/javascript" src="services/userservice.js"></script>
+<script type="text/javascript" src="services/BlogService.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+ <script type="text/javascript" src="services/chatservice.js"></script>
+<script type="text/javascript" src="Controller/chatcontroller.js"></script>
+
+<script type="text/javascript" src="js/sockjs/sockjs.min.js"></script>
+	<script type="text/javascript" src="js/stomp/dist/stomp.min.js"></script>
+
+</html>

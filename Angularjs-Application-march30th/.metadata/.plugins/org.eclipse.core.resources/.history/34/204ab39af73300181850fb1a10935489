@@ -1,0 +1,280 @@
+/**
+ * 
+ */
+
+var app=angular.module("myapp",['ngRoute','ngCookies'])
+app.config(function($routeProvider){
+	$routeProvider
+	.when('/register',{
+		templateUrl:'register.html',
+		controller:'UserController'
+	})
+	.when('/suggesteduser',{
+		templateUrl:'suggestedusers.html',
+		controller:'UserController'
+	})
+	 .when('/chat',{
+		templateUrl:'chat.html',
+		controller:'ChatCtrl'
+	})
+	.when('/seealluser',{
+		templateUrl:'seeusers.html',
+		controller:'UserController'
+	}).when('/suggestedusers',{
+		templateUrl:'suggestedusers.html',
+		controller:'UserController'
+	})
+	.when('/updateprofile',{
+		templateUrl:'updateuser.html',
+		controller:'UserController'
+	})
+	.when('/addblog',{
+		templateUrl:'addblog.html',
+		controller:'BlogController'
+		
+		
+	})
+	.when('/addjob',{
+		templateUrl:'addjob.html',
+		controller:'BlogController'
+		
+		
+	})
+	.when('/blogapproval',{
+		templateUrl:'adminblogwaitingforapproval.html',
+		controller:'BlogController'
+		
+		
+			})
+	
+	.when('/profilepic',{
+		templateUrl:'uploadprofilepic.html'
+	})
+	.when('/addblogpicture',{
+		templateUrl:'addblogpicture.html'
+	})
+	.when('/display/:id',{
+		templateUrl:'displayblog.html',
+		controller:'BlogController'
+		
+		
+	})
+	.when('/displayjob/:id',{
+		templateUrl:'displayblog.html',
+		controller:'BlogController'
+		
+		
+	})
+	.when('/adminreadblog/:id',{
+		templateUrl:'admindisplayblog.html',
+		controller:'BlogController'
+		
+		
+	})
+	.when('/allblog',{
+		templateUrl:'seeallblogs.html',
+		controller:'BlogController'
+		
+		
+	})
+	
+		
+		
+
+	.when('/login',{
+		templateUrl:'login.html',
+		controller:'UserController'
+	})
+	.when('/home',{
+		templateUrl:'home1.html'
+		
+	})
+	
+	
+	
+	.otherwise({redirectTo: '/home'});
+})
+app.run(function($rootScope,$location,UserService,$cookieStore){
+	
+UserService.getallfriedrequests().then(function(response){
+		
+		$rootScope.friendrequests=response.data;
+	
+	},
+	function(response){
+		
+		
+	})
+	UserService.getfriendrequestnumber().then(function(response){
+		
+		
+		$rootScope.frdnumber=response.data;
+	
+	},
+	function(response){
+		
+		
+		
+	})
+	
+UserService.getnotificationnumber().then(function(response){
+		
+		
+		$rootScope.notinumber=response.data;
+	
+	},
+	function(response){
+		
+		
+		
+	})
+	
+	UserService.getallnotifications().then(function(response){
+		
+		$rootScope.notification=response.data;
+		
+	
+	},
+	function(response){
+		
+		
+	})
+		
+	
+	if ($rootScope.userlogged == undefined)
+		{
+		$rootScope.userlogged = $cookieStore.get('currentuser')
+		}
+
+	
+	$rootScope.logout=function()
+	{
+		UserService.logout().then(function(){
+			alert("success")
+		delete $rootScope.userlogged;
+			
+		$cookieStore.remove('currentuser')	
+		$location.path('/home')
+			
+			
+		},function(response){
+			alert("unsuccessfull")
+			
+		})	
+	
+	
+	}
+	$rootScope.acceptfriend=function(friendid)
+	{
+		
+		alert("entering")
+		
+		
+		UserService.acceptfriend(friendid).then(function(){
+			
+			UserService.getallfriedrequests().then(function(response){
+				
+				$rootScope.friendrequests=response.data;
+			
+			},
+			function(response){
+				
+				
+			})
+			UserService.getfriendrequestnumber().then(function(response){
+				
+				
+				$rootScope.frdnumber=response.data;
+			
+			},
+			function(response){
+				
+				
+				
+			})
+			
+			
+			
+		},function(response){
+			
+			alert("failed")
+		})	
+	
+	}
+	$rootScope.deletenoti=function(id)
+	{
+		
+		alert("entering")
+		
+		
+		UserService.deletenoti(id).then(function(){
+			
+			
+			UserService.getnotificationnumber().then(function(response){
+				
+				
+				$rootScope.notinumber=response.data;
+			
+			},
+			function(response){
+				
+				
+				
+			})
+			
+			UserService.getallnotifications().then(function(response){
+				
+				$rootScope.notification=response.data;
+				
+			
+			},
+			function(response){
+				
+				
+			})
+			
+		},function(response){
+			
+		alert("Unsuccessfull")	
+		})	
+	
+	}
+
+	$rootScope.rejectfriend=function(friendid)
+	{
+		
+		alert("entering")
+		
+		
+		UserService.rejectfriend(friendid).then(function(){
+			
+			
+			
+			UserService.getallfriedrequests().then(function(response){
+				
+				$rootScope.friendrequests=response.data;
+			
+			},
+			function(response){
+				
+				
+			})
+			UserService.getfriendrequestnumber().then(function(response){
+				
+				
+				$rootScope.frdnumber=response.data;
+			
+			},
+			function(response){
+				
+				
+				
+			})
+			
+		},function(response){
+			
+		alert("Unsuccessfull")	
+		})	
+	
+	}
+})

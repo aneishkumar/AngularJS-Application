@@ -1,0 +1,37 @@
+package com.project2.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Component
+@Table(name="bloglikesnumber")
+public class BlogLikesNumber {
+	@Id
+	private int blogid;
+	private int num2;
+	private boolean liked=false;
+	public int getBlogid() {
+		return blogid;
+	}
+	public void setBlogid(int blogid) {
+		this.blogid = blogid;
+	}
+	public int getNum2() {
+		return num2;
+	}
+	public void setNum2(int num2) {
+		this.num2 = num2;
+	}
+	public boolean isLiked() {
+		return liked;
+	}
+	public void setLiked(boolean liked) {
+		this.liked = liked;
+	}
+	
+
+}

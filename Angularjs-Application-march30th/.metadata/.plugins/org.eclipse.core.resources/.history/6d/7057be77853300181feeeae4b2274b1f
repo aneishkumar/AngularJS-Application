@@ -1,0 +1,27 @@
+package com.project2.DAOImpl;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.BlogPictureDAO;
+import com.project2.model.BlogPicture;
+
+@Repository
+@Transactional
+public class BlogPicturDAOImpl implements BlogPictureDAO {
+	@Autowired
+	private SessionFactory sessionFactory;
+	public void addblogpicture(BlogPicture picture) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public BlogPicture getBlogPicture(int blogid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,24 @@
+package com.project2.model;
+
+public class Job {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
+	private String jobtitle;
+	
+	private String jobdescription;
+	
+	private String skillsRequired;
+	
+	private String location;
+
+	private String companyname;
+
+	private String salary;
+	
+	private String yrsOfExp;
+
+	private Date postedon;
+
+}

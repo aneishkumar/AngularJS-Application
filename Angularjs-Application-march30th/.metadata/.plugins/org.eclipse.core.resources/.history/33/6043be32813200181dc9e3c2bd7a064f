@@ -1,0 +1,13 @@
+<table>
+
+
+<tr ng-repeat="u in userss">
+<td>
+<td><img src="http://localhost:8085/bridgeware/getimage/{{u.username}}" alt="{{u.username}}" width="200px" height="200px" ></td>
+<td>{{u.name}}<br>
+
+<a href="" ng-click="addfriend(u.username)"><button>Add Friend</button></a><br>
+
+<br>
+</tr>
+</table>

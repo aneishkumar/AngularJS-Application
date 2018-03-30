@@ -1,0 +1,37 @@
+  <h1><center><font size="8"><b>{{jobq.jobtitle}}</b></font></center></h1>
+      <center>   <img src="{{jobq.imagename}}"  width="400px" height="400px" class="avatar img-square" alt="avatar">
+ <font size="6"><b> <table>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.jobtitle}}</td></tr>
+<tr><td>Description</td><td>:</td><td>{{jobq.jobdescription}}</td></tr>
+<tr><td>Position</td><td>:</td><td>{{jobq.position}}</td></tr>
+<tr><td>Skills Required</td><td>:</td><td>{{jobq.skillsRequired}}</td></tr>
+<tr><td>Job Location</td><td>:</td><td>{{jobq.location}}</td></tr>
+<tr><td>Company name</td><td>:</td><td>{{jobq.companyname}}</td></tr>
+<tr><td>Salary</td><td>:</td><td>{{jobq.salary}}</td></tr>
+<tr><td>Experience required</td><td>:</td><td>{{jobq.exp}}</td></tr>
+<tr><td>Posted On</td><td>:</td><td>{{jobq.postedon}}</td></tr>
+<tr><td>Interview date</td><td>:</td><td>{{jobq.interviewdate}}</td></tr>
+<tr><td>Users AppliedSoFar</td><td>:</td><td>{{jobstatus.numa}}</td></tr>
+
+
+</table>
+</b></font>
+
+<div ng-show="jobstatus.applied=='false'">
+<div ng-show="userlogged.role=='USER'">
+<center><a href="" ng-click="applyjob(jobq)"><button type="button" class="btn btn-success"><font size="8">Apply</font></button></a></center>
+</div>
+</div>
+<div ng-show="jobstatus.applied=='false'">
+<div ng-show="userlogged.role=='USER'">
+<center><a href="" ng-click="applyjob(jobq)"><button type="button" class="btn btn-success"><font size="8">Apply</font></button></a></center>
+</div>
+</div>
+</center>
+<br>
+<br>
+{{jobstatus.applied}}
+<br>
+
+
+ 

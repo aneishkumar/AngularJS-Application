@@ -1,0 +1,15 @@
+  <h1><center><font size="8"><b>{{jobq.jobtitle}}</b></font></center></h1>
+      <center>   <img src="{{jobq.imagename}}"  width="400px" height="400px" class="avatar img-square" alt="avatar">
+  <table>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.jobtitle}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.jobdescription}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.position}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.skillsRequired}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.location}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.companyname}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.salary}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.exp}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.postedon}}</td></tr>
+<tr><td>Job Title</td><td>:</td><td>{{jobq.interviewdate}}</td></tr>
+
+ 

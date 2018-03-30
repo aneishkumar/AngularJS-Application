@@ -1,0 +1,161 @@
+
+<html>
+<head>
+<style>
+.glyphicon.glyphicon-thumbs-up{
+    font-size: 50px;
+}
+a.thumbs-up {
+  position: relative;
+  font-size: 8em;
+  
+  cursor: pointer;
+}
+.comments {
+  margin: 2.5rem auto 0;
+  max-width: 60.75rem;
+  padding: 0 1.25rem;
+}
+
+.comment-wrap {
+  margin-bottom: 1.25rem;
+  display: table;
+  width: 100%;
+  min-height: 5.3125rem;
+}
+
+.photo {
+  padding-top: 0.625rem;
+  display: table-cell;
+  width: 3.5rem;
+}
+.photo .avatar {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 50%;
+  background-size: contain;
+}
+
+.comment-block {
+  padding: 1rem;
+  background-color: #fff;
+  display: table-cell;
+  vertical-align: top;
+  border-radius: 0.1875rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+.comment-block textarea {
+  width: 100%;
+  resize: none;
+}
+
+.comment-text {
+  margin-bottom: 1.25rem;
+}
+
+.bottom-comment {
+  color: #acb4c2;
+  font-size: 0.875rem;
+}
+
+.comment-date {
+  float: left;
+}
+
+.comment-actions {
+  float: right;
+}
+.comment-actions li {
+  display: inline;
+  margin: -2px;
+  cursor: pointer;
+}
+.comment-actions li.complain {
+  padding-right: 0.75rem;
+  border-right: 1px solid #e1e5eb;
+}
+.comment-actions li.reply {
+  padding-left: 0.75rem;
+  padding-right: 0.125rem;
+}
+.comment-actions li:hover {
+  color: #0095ff;
+}</style></head><body>
+
+
+      
+     <h1><center><font size="8"><b>{{blogq.blogtitle}}</b></font></center></h1>
+    <div align="right">
+     <font size="4">
+  <table><tr><td>
+Posted By:</td><td>{{blogq.username}}</td>
+ </tr><tr><td>
+      Posted on:</td><td>{{blogq.postedon}} </td></font>
+     </tr>
+     </table>
+     </font>
+     </div>
+     <br>
+       <center>   <img src="http://localhost:8085/bridgeware/getblogimage/{{blogq.blogid}}"  width="133px" height="133px" class="avatar img-circle" alt="avatar">
+     </center>
+     <br>
+   <br><br>
+     <div align="justify"> 
+     <b>{{blogq.blogcontent}}</b>
+     
+      </div>
+    
+      <div ng-show="xyz.liked =='1'">
+      
+				<a href="" ng-click="updatelikes(xyz.blogid)">	<span class="glyphicon glyphicon-thumbs-up" style="color: blue"
+						>{{xyz.num2}}</span></a>
+				</div>
+				<div ng-show="xyz.liked=='0'">
+				<a href="" ng-click="updatelikes(xyz.blogid)">	<span class="glyphicon glyphicon-thumbs-up" style="color: black"
+						>{{xyz.num2}}</span></a>
+				</div> 
+				<div>
+      <textarea row="3" cols="15" ng-model="blogmessage"></textarea>
+      <br>
+      
+				
+				
+      <button type="button" class="btn btn-primary" value="comment" ng-click="addcomment(blogq,blogmessage)">Post comment</button></div>
+      <br><br><br> {{blogmessage.error}}
+      
+      <div class="panel-heading" ng-repeat="s in blogmessages" ng-model='blogmessages'>   
+      <br>
+       <img src="http://localhost:8085/bridgeware/getimage/{{s.username}}"  width="33px" height="33px" class="avatar img-square" alt="avatar">&nbsp;&nbsp; <font size="3">{{s.username}}</font> <font size="1"> {{s.postedon | date :'yyyy:MM:dd'}}</font>  
+     <br> 
+     
+      </div>
+      <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                  <div class="page-header">
+                    <h1><small class="pull-right"></small> Comments </h1>
+                  </div> 
+                   <div class="comments-list" ng-repeat="s in blogmessages" ng-model='blogmessages's>
+                       <div class="media">
+                           <p class="pull-right"><small>5 days ago</small></p>
+                            <a class="media-left" href="#">
+                              <img src="http://localhost:8085/bridgeware/getimage/{{s.username}}">
+                            </a>
+                            <div class="media-body">
+                                
+                              <h4 class="media-heading user_name">Baltej Singh</h4>
+                              Wow! this is really great.
+                              
+                              <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                            </div>
+                          </div>
+                       
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+  </body>
+  </html> 
+   

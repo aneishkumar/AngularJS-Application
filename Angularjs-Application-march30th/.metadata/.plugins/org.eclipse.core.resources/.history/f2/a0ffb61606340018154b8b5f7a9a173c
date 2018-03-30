@@ -1,0 +1,23 @@
+package com.project2.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+
+import com.project2.DAO.JobAppliedDAO;
+import com.project2.model.JobApplied;
+
+public class JobAppliedDAOImpl implements JobAppliedDAO {
+
+	public void addJobApplied(JobApplied joba) {
+		Session session=sessionFactory.getCurrentSession();
+		session.save(blog);
+		
+	}
+
+	public List<JobApplied> getalljobapplied(int jobid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

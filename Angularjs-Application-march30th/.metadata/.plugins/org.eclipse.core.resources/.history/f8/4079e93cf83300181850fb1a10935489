@@ -1,0 +1,11 @@
+
+      <div ng-repeat="u in jobdata" ng-model='jobdata'>
+      <table>
+      <tr><td>
+      <img src="{{u.imageurl}}"  width="300px" height="200px"  alt="avatar">
+      </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td><h2><a href="#/displayjob/{{u.id}}"><font size="8">{{u.blogtitle}}</font></h2><br></a>
+     <font size="8"> Posted by:{{u.username}} <br>
+      Posted On:{{u.postedon| date :'yyyy:MM:dd'}}</font></td></tr></table>
+      <br>
+      </div>

@@ -1,0 +1,11 @@
+package com.project2.DAO;
+
+import com.project2.model.FriendRequestsNumber;
+import com.project2.model.NotificationNumber;
+
+public interface FriendRequestNumberDAO {
+	public void updatefrdrequestnumber(FriendRequestsNumber frdnumber);
+	public FriendRequestsNumber getnfrdnumber(String Username);
+	
+
+}

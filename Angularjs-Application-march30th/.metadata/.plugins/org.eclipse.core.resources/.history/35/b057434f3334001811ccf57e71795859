@@ -1,0 +1,119 @@
+/**
+ * 
+ */
+app.controller('UserController',function($scope,$location,$rootScope,$cookieStore,UserService){
+	
+
+	UserService.gettallusers().then(function(response){
+		
+		$scope.users=response.data;
+	
+	},
+	function(response){
+		
+		
+	})
+	UserService.gettallsuggesteduser().then(function(response){
+		
+		$scope.userss=response.data;
+	
+	},
+	function(response){
+		
+		
+	})
+	
+	if($rootScope.userlogged!=undefined)
+		{
+		
+		
+		
+	UserService.getcurrentuserdata().then(function(response){
+		
+		$scope.user=response.data;
+	
+	},
+	function(response){
+		
+		
+	})
+
+	
+		}
+
+	
+	
+	
+	$scope.addfriend=function(username)
+	{
+		
+		alert("entering")
+		
+		
+		UserService.addfriend(username).then(function(){
+			
+			alert("Successfully posted friend request")
+			UserService.gettallsuggesteduser().then(function(response){
+		
+		$scope.userss=response.data;
+	
+	},
+	function(response){
+		
+		
+	})
+			
+			
+		},function(response){
+			
+			
+		})	
+	
+	}
+
+	
+	
+	$scope.adduser=function(user)
+	{
+		
+		UserService.adduser(user).then(function(response){
+			
+		
+			$location.path('/login')
+			
+		},function(response){
+			alert("unsuccessfull")
+			
+		})	
+	
+	}
+	$scope.edituser=function(user)
+	{
+		
+		UserService.edituser(user).then(function(response){
+			alert("success")
+		
+			$location.path('/home')
+			
+		},function(response){
+			alert("unsuccessfulledit")
+			$location.path=('/login')
+			
+		})	
+	
+	}
+	
+		
+	
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+})

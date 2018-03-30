@@ -1,0 +1,33 @@
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<section class="slide-wrapper">
+    <div class="container">
+	    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="fill" style=" background-color:#48c3af;">1</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="fill" style=" background-color:#b33f4a;">2</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="fill" style=" background-color:#7fc2f4;">3</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="fill" style=" background-color:#e47794;">4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

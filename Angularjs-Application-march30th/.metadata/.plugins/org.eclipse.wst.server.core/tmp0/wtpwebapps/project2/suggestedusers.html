@@ -1,0 +1,11 @@
+
+<div ng-repeat="u in userss" ng-model='userss'>
+      <table>
+      <tr><td>
+      <img src="http://localhost:8085/bridgeware/getimage/{{u.username}}"  width="300px" height="200px"  alt="avatar">
+      </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td><h2><a href="#/display/{{u.blogid}}"><font size="8">{{u.name}}</font></h2><br></a>
+     <font size="8"> Mobile Number:{{u.mobilenumber}} <br>
+      <a href="" ng-click="addfriend(u.username)"><button type="button" class="btn btn-success">Add Friend</button></a><br></font></td></tr></table>
+      <br>
+      </div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+     
+    <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+    
+    <link href="themes/explorer/theme.css" media="all" rel="stylesheet" type="text/css"/>
+   
+    <script src="js/fileinput.js" type="text/javascript"></script>
+    <script src="themes/explorer/theme.js" type="text/javascript"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+	rel="stylesheet" />
+   
+<title>Insert title here</title>
+</head>
+<body>
+<h1><center><b>Check Blog pic Added</b></center></h1>
+<center> <img src="http://localhost:8085/bridgeware/getblogimage/{{blogqs.blogid}}"  width="150px" height="150px" class="avatar img-circle" alt="avatar"></center>
+<div class="container kv-main">
+           <div class="form-group">
+            <input class="file" type="file" 
+            name="image"
+            data-preview-file-type="any" 
+            data-upload-url="http://localhost:8085/bridgeware/uploadblogpic">
+        </div>
+        </div>
+         <h2><center><input type="button" class="btn btn-success"  value="Update" onClick="window.location.reload()"></font></center></h2>
+        
+        
+        
+        <br><br><br>
+     <font color="red" size="8"> Note:If picure is not added blog will be rejected without examining.Also Upload only one pic</font>  
+       
+</body>
+</html>

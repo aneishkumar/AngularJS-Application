@@ -1,0 +1,18 @@
+
+  <div class="panel panel-info" ng-repeat="u in blogdata" ng-model='blogdata'>
+  
+<div class="panel-heading">
+ 
+    <a href="#/display/{{u.blogid}}"> {{u.blogtitle}}</a><br>
+    <b> Posted By:{{u.username}}  </b>   
+     </div>
+     
+      </div>
+      
+      <table>
+      <tr><td>
+      <img src="http://localhost:8085/bridgeware/getblogimage/{{blogq.blogid}}"  width="400px" height="400px" class="avatar img-square" alt="avatar">
+      </td>
+      <td><h2>{{u.blogtitle}}</h2><br>
+      Posted by:{{u.username}} <br>
+      Posted On:{{u.postedon}}</table>

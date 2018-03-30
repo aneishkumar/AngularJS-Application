@@ -1,0 +1,14 @@
+
+
+     
+      </div>
+      <div ng-repeat="u in blogdata" ng-model='blogdata'>
+      <table>
+      <tr><td>
+      <img src="http://localhost:8085/bridgeware/getblogimage/{{u.blogid}}"  width="300px" height="200px"  alt="avatar">
+      </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td><h2><a href="#/display/{{u.blogid}}"><font size="8">{{u.blogtitle}}</font></h2><br></a>
+     <font size="8"> Posted by:{{u.username}} <br>
+      Posted On:{{u.postedon}}</font></td></tr></table>
+      <br>
+      </div>

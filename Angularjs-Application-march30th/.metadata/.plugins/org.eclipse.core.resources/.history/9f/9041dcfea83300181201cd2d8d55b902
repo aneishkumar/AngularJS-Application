@@ -1,0 +1,25 @@
+package com.project2.model;
+
+public class Job {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	@NotNull(message="Cannot be null")
+	@Size(min=1)
+	private String jobtitle;
+	@NotNull
+	private String jobdescription;
+	@NotNull
+	private String skillsRequired;
+	@NotNull
+	private String location;
+	@NotNull
+	private String companyname;
+	@NotNull
+	private String salary;
+	@NotNull
+	private String yrsOfExp;
+	@NotNull
+	private Date postedon;
+
+}

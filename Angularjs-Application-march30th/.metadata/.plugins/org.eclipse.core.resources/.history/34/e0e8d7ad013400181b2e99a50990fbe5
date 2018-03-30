@@ -1,0 +1,19 @@
+  <h1><center><font size="8"><b>{{jobq.jobtitle}}</b></font></center></h1>
+      <center>   <img src="{{jobq.imagename}}"  width="400px" height="400px" class="avatar img-square" alt="avatar">
+  <table><tr><td>
+Job Title:</td><td>{{jobq.position}}</td>
+ </tr><tr><td>
+      Posted on:</td><td>{{jobq.postedon | date :'yyyy:MM:dd'}} </td></font>
+     </tr>
+     </table>
+     <
+     <br>
+     
+     </center>
+     <br>
+   <br><br>
+     <div align="justify"> 
+     <b>{{jobq.description}}</b>
+     
+      </div>
+    

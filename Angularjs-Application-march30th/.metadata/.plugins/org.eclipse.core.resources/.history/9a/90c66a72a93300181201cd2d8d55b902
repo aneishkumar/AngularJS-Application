@@ -1,0 +1,10 @@
+package com.project2.DAO;
+
+public interface JobDAO {
+	void saveJob(Job job);
+	List<Job> getAllJobs();
+	Job getJobById(int id);
+	Job deletejob(int id);
+	void applyjob(int id);
+
+}

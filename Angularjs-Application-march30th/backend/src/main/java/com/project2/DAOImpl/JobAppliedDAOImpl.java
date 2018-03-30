@@ -1,0 +1,37 @@
+package com.project2.DAOImpl;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.project2.DAO.JobAppliedDAO;
+import com.project2.model.BlogComment;
+import com.project2.model.JobApplied;
+@Repository
+@Transactional
+public class JobAppliedDAOImpl implements JobAppliedDAO {
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public void addJobApplied(JobApplied joba) {
+		Session session=sessionFactory.getCurrentSession();
+		session.save(joba);
+		
+	}
+
+	public List<JobApplied> getalljobapplied(int jobid) {
+Session session=sessionFactory.getCurrentSession();
+		
+		Query query=session.createQuery("from JobApplied where jobid=:jobid");
+		query.setParameter("jobid",jobid);
+		List<JobApplied> bloglist=query.list();
+		return bloglist;
+	}
+
+}

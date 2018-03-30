@@ -1,0 +1,13 @@
+<table>
+<tr>
+<td>Username</td>
+<td>Email id</td>
+<td></td>
+
+<tr ng-repeat="u in userss">
+<td>{{u.name}}</td>
+<td>{{u.emailid}}</td>
+<td><a href="" ng-click="addfriend({{u.username}})"><button>Add Friend</button></a>
+<td><a href="" ng-click="rejectrequest({{u.username}})"><button>Reject Friend</button></a>
+</tr>
+</table>
